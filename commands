@@ -1,0 +1,17 @@
+sudo docker build -t train-me-sandbox-2 .
+
+sudo docker run --name official-sandbox --privileged -v /home/dann/train-me/train-me-sandbox/output-data:/tmp/files train-me-sandbox-2
+sudo docker run --name official-sandbox-2 --privileged -v /home/dann/train-me/train-me-sandbox/output-data:/tmp/files -e SANDBOX_MEMORY=512000 -e SANDBOX_TIME=3 -e SANDBOX_INPUT='problemFiles-uSFwagzWBmN9QieGC-input' train-me-sandbox-2
+
+sudo docker start --attach=true official-sandbox
+
+
+Remove repository
+docker rmi <image id>
+
+List containers
+docker ps -a
+
+Delete containers
+docker rm image
+ 
