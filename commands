@@ -6,12 +6,15 @@ sudo docker run --name official-sandbox-2 --privileged -v /home/dann/train-me/tr
 sudo docker start --attach=true official-sandbox
 
 
-Remove repository
-docker rmi <image id>
-
 List containers
 docker ps -a
 
+List images
+docker images
+
 Delete containers
-docker rm image
+docker rm <container name>
+
+Delete images
+docker rmi <image name>
  
